@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grow A Garden - Jogo de Fazenda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header com informações do jogador -->
+        <header class="game-header">
+            <div class="player-info">
+                <div class="money">
+                    <span class="money-icon">💰</span>
+                    <span id="player-money">100</span> Sheckles
+                </div>
+                <div class="level">
+                    <span class="level-icon">⭐</span>
+                    Nível <span id="player-level">1</span>
+                </div>
+            </div>
+            <h1>🌱 Grow A Garden</h1>
+            <div class="game-controls">
+                <button id="save-game" class="btn btn-primary">💾 Salvar</button>
+                <button id="reset-game" class="btn btn-danger">🔄 Resetar</button>
+            </div>
+        </header>
+
+        <!-- Área principal do jogo -->
+        <main class="game-main">
+            <!-- Jardim -->
+            <section class="garden-section">
+                <h2>🌿 Seu Jardim</h2>
+                <div id="garden-grid" class="garden-grid">
+                    <!-- Parcelas serão geradas dinamicamente pelo JavaScript -->
+                </div>
+                <div class="garden-controls">
+                    <button id="expand-garden" class="btn btn-secondary">🔧 Expandir Jardim (500 Sheckles)</button>
+                    <button id="water-all" class="btn btn-info">💧 Regar Tudo (10 Sheckles)</button>
+                </div>
+            </section>
+
+            <!-- Loja -->
+            <section class="shop-section">
+                <h2>🏪 Loja de Sementes</h2>
+                <div id="shop-grid" class="shop-grid">
+                    <!-- Itens da loja serão gerados dinamicamente -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Sidebar com inventário -->
+        <aside class="sidebar">
+            <section class="inventory-section">
+                <h3>🎒 Inventário</h3>
+                <div id="inventory-grid" class="inventory-grid">
+                    <!-- Itens do inventário serão gerados dinamicamente -->
+                </div>
+                <button id="sell-all" class="btn btn-success">💸 Vender Tudo</button>
+            </section>
+
+            <section class="stats-section">
+                <h3>📊 Estatísticas</h3>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-label">Plantas Cultivadas:</span>
+                        <span id="plants-grown">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Total Ganho:</span>
+                        <span id="total-earned">0</span> Sheckles
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Tempo de Jogo:</span>
+                        <span id="play-time">0m</span>
+                    </div>
+                </div>
+            </section>
+        </aside>
+    </div>
+
+    <!-- Modal para seleção de sementes -->
+    <div id="seed-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>🌱 Escolha uma Semente</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="seed-selection" class="seed-selection">
+                    <!-- Sementes disponíveis serão geradas dinamicamente -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para detalhes da planta -->
+    <div id="plant-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="plant-modal-title">🌿 Detalhes da Planta</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="plant-details" class="plant-details">
+                    <!-- Detalhes da planta serão gerados dinamicamente -->
+                </div>
+                <div class="plant-actions">
+                    <button id="harvest-plant" class="btn btn-success">🌾 Colher</button>
+                    <button id="favorite-plant" class="btn btn-warning">⭐ Favoritar</button>
+                    <button id="water-plant" class="btn btn-info">💧 Regar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificações -->
+    <div id="notifications" class="notifications">
+        <!-- Notificações serão geradas dinamicamente -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
